@@ -1,7 +1,7 @@
 # bluegreen-demo-app
 Blue Green Deployment with Kubernetes
 
-We will be using **minikube** to run kubernetes locally with **Virtual Box** .
+We will be using [minikube](https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/) to run kubernetes locally with **Virtual Box** .
 
 ```$ minikube start --vm-driver=virtualbox```
 
@@ -11,10 +11,11 @@ We will be using **minikube** to run kubernetes locally with **Virtual Box** .
 1. Exposing with a Service
 1. Making Changes
 
-### 1. Blue Deployment
+## 1. Blue Deployment
 
 Let's start by creating the demo app for *BLUE* version.
-Docker image credits to **smesch/hugo-app**
+
+Docker image used in this demo are credited to [smesch/hugo-app](https://hub.docker.com/r/smesch/hugo-app/tags/)
 
 ```$ kubectl apply -f blue.yaml```
 
@@ -40,7 +41,7 @@ spec:
           name: http-server
 ```
 
-### 2. Green Deployment
+## 2. Green Deployment
 
 Next, we will make our *GREEN* app.
 
@@ -68,10 +69,12 @@ spec:
           name: http-server
 ```
 
-### 3. Expose with a service
+## 3. Expose with a service
 
 To expose the app, we will create a kubernetes Service.
 Please take note the Service type **NodePort** to expose our service from internal cluster(virtual box) to host machine(local). 
+
+[Read more about Kubernetes Service types](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services---service-types)
 
 ```$ kubectl apply -f service.yaml```
 
@@ -99,7 +102,7 @@ Now, we can see our running service.
 
 Currently, Service is routing traffic to *BLUE* version of our application. (You can see app page with Blue header)
 
-### 4. Making Changes
+## 4. Making Changes
 
 We can do *Rolling Updates* to our Service by switching to *GREEN* version.
 
