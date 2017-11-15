@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: webserver-green
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: bluegreen-demo-app
+        type: webserver
+        color: green
+    spec:
+      containers:
+      - image: smesch/hugo-app:green
+        name: webserver-container
+        ports:
+        - containerPort: 80
+          name: http-server
