@@ -1,4 +1,4 @@
-# bluegreen-demo-app
+# BlueGreen Deployment with Kubernetes (Demo)
 Blue Green Deployment with Kubernetes
 
 We will be using [minikube](https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/) to run kubernetes locally with **Virtual Box** .
