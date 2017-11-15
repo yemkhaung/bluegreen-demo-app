@@ -6,6 +6,10 @@ We will be using **minikube** to run kubernetes locally with **Virtual Box** .
 ```$ minikube start --vm-driver=virtualbox```
 
 ## Procedures
+1. Blue Deployemnt
+1. Green Deployment
+1. Exposing with a Service
+1. Making Changes
 
 ### 1. Blue Deployment
 
@@ -95,7 +99,7 @@ Now, we can see our running service.
 
 Currently, Service is routing traffic to *BLUE* version of our application. (You can see app page with Blue header)
 
-### 4. Making updates
+### 4. Making Changes
 
 We can do *Rolling Updates* to our Service by switching to *GREEN* version.
 
