@@ -109,3 +109,22 @@ We can do *Rolling Updates* to our Service by switching to *GREEN* version.
 ```$ kubectl patch service bluegreen-demo-app -p '{"spec":{"selector":{"color":"green"}}}' ```
 
 Reloading the browser will show the *GREEN* version (with Green header)
+
+## Cleaning Up Deployments and Services
+
+```
+kubectl delete service bluegreen-demo-app
+kubectl delete deployment webserver-blue
+kubectl delete deployment webserver-green
+```
+
+Or, clean up all using yaml files 
+
+```kubectl delete -f .```
+
+where, "." is folder in which (`blue.yaml`, `green.yaml`, `service.yaml`) exists.
+
+Stop the kubenetes cluster
+
+```minikube stop```
+
