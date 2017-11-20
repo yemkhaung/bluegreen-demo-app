@@ -113,18 +113,23 @@ Reloading the browser will show the *GREEN* version (with Green header)
 ## Cleaning Up Deployments and Services
 
 ```
-kubectl delete service bluegreen-demo-app
-kubectl delete deployment webserver-blue
-kubectl delete deployment webserver-green
+$ kubectl delete service bluegreen-demo-app
+$ kubectl delete deployment webserver-blue
+$ kubectl delete deployment webserver-green
 ```
 
 Or, clean up all using yaml files 
 
-```kubectl delete -f .```
+```$ kubectl delete -f .```
 
 where, "." is folder in which (`blue.yaml`, `green.yaml`, `service.yaml`) exists.
 
-Stop the kubenetes cluster
+Stop the kubernetes cluster
 
-```minikube stop```
+```$ minikube stop```
+
+## Extras
+All the process can be done via __kubernetes Dashbord__
+
+```$ minikube dashboard```
 
